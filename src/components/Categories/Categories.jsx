@@ -21,9 +21,9 @@ const Categories = () => {
     <div className="categories">
       <ul>
         {
-          categories.map((item) => (
+          categories.map((item, index) => (
             <li
-              key={item.id}
+              key={index}
               className={activeItem === item.id ? 'active' : ''}
               onClick={() => onClickCategory(item.id)}>
               {item.categories}

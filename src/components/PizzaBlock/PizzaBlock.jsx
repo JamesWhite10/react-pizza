@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PizzaBlock = ({imageUrl, name, key, types, sizes, price}) => {
+const PizzaBlock = ({imageUrl, name, types, sizes, price}) => {
 
     // const [pizzaCounter, setPizzaCounter] = React.useState(0);
     //
@@ -13,7 +13,7 @@ const PizzaBlock = ({imageUrl, name, key, types, sizes, price}) => {
     const [activeSize, setActiveSize] = React.useState(0);
 
     return (
-        <div className="pizza-block" key={key}>
+        <div className="pizza-block">
             <img
                 className="pizza-block__image"
                 src={imageUrl}
