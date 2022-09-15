@@ -1,6 +1,16 @@
 import React from 'react';
 
 const Sort = () => {
+
+    const [isToggle, setIsToggle] = React.useState(false);
+    const [category, setCategory] = React.useState('популярности');
+    const categories = ['популярности', 'цене', 'алфавиту'];
+
+    const onClickCategory = (index) => {
+        setCategory(index);
+        setIsToggle(false);
+    };
+
     return (
         <div className="sort">
             <div className="sort__label">
@@ -17,15 +27,26 @@ const Sort = () => {
                     />
                 </svg>
                 <b>Сортировка по:</b>
-                <span>популярности</span>
+                <span onClick={() => setIsToggle(!isToggle)}>{category}</span>
             </div>
-            <div className="sort__popup">
-                <ul>
-                    <li className="active">популярности</li>
-                    <li>цене</li>
-                    <li>алфавиту</li>
-                </ul>
-            </div>
+            {
+                isToggle &&
+                <div className="sort__popup">
+                    <ul>
+                        {
+                            categories.map((type, index) => (
+                                <li
+                                    onClick={() => onClickCategory(type)}
+                                    className={category === type ? 'active' : ''}
+                                    key={index}
+                                >
+                                    {type}
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            }
         </div>
     );
 };
