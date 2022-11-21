@@ -2,10 +2,6 @@ import React from 'react';
 
 const PizzaBlock = ({imageUrl, name, types, sizes, price}) => {
 
-    // const [pizzaCounter, setPizzaCounter] = React.useState(0);
-    //
-    // const addPizza = () => setPizzaCounter(pizzaCounter + 1);  className="active"
-
     const typeNames = ['тонкое', 'традиционное'];
 
 
