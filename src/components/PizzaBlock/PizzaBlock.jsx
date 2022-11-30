@@ -4,7 +4,6 @@ const PizzaBlock = ({imageUrl, name, types, sizes, price}) => {
 
   const typeNames = ['тонкое', 'традиционное'];
 
-
   const [activeType, setActiveType] = React.useState(0);
   const [activeSize, setActiveSize] = React.useState(0);
 

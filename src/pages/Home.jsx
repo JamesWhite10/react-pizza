@@ -17,20 +17,20 @@ const Home = () => {
       });
   }, []);
   return (
-    <>
+    <div className="container">
       <div className="content__top">
         <Categories/>
         <Sort/>
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">
-        {loading ? [...new Array(6)].map((_, index) => (
+        {loading ? [...new Array(8)].map((_, index) => (
           <PizzaSkeleton key={index}/>
         )) : items.map((obj) => (
           <PizzaBlock key={obj.id} {...obj}/>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
