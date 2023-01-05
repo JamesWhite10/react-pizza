@@ -1,13 +1,19 @@
 import React from 'react';
 
-const Sort = () => {
+const Sort = ({value, onChangeSort}) => {
 
     const [isToggle, setIsToggle] = React.useState(false);
-    const [category, setCategory] = React.useState('популярности');
-    const categories = ['популярности', 'цене', 'алфавиту'];
+    const listSort = [
+        {name: 'популярности (от большей)', sortProperty: 'rating'},
+        {name: 'популярности (от меньшей)', sortProperty: '-rating'},
+        {name: 'цене (от большей)', sortProperty: 'price'},
+        {name: 'цене (от меньшей)', sortProperty: '-price'},
+        {name: 'алфавиту (от А)', sortProperty: 'title'},
+        {name: 'алфавиту (от Я)', sortProperty: '-title'},
+    ];
 
     const onClickCategory = (index) => {
-        setCategory(index);
+        onChangeSort(index);
         setIsToggle(false);
     };
 
@@ -27,20 +33,20 @@ const Sort = () => {
                     />
                 </svg>
                 <b>Сортировка по:</b>
-                <span onClick={() => setIsToggle(!isToggle)}>{category}</span>
+                <span onClick={() => setIsToggle(!isToggle)}>{value.name}</span>
             </div>
             {
                 isToggle &&
                 <div className="sort__popup">
                     <ul>
                         {
-                            categories.map((type, index) => (
+                            listSort.map((type, index) => (
                                 <li
                                     onClick={() => onClickCategory(type)}
-                                    className={category === type ? 'active' : ''}
+                                    className={value.sortProperty === type.sortProperty ? 'active' : ''}
                                     key={index}
                                 >
-                                    {type}
+                                    {type.name}
                                 </li>
                             ))
                         }
