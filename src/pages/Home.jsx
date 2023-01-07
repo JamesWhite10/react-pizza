@@ -19,15 +19,13 @@ const Home = () => {
       const order = sortType.sortProperty.includes('-') ? 'asc' : 'desc';
       const category = categoryType > 0 ? `category=${categoryType}` : '';
 
-      console.log(category)
-
     fetch(`https://633f17280dbc3309f3c4b2b3.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}`)
       .then((response) => response.json())
       .then((pizzas) => {
         setLoading(false);
         setItems(pizzas)
       });
-      console.log(items)
+
     window.scrollTo(0, 0);
   }, [categoryType, sortType]);
 
