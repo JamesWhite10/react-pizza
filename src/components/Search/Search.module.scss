@@ -2,29 +2,39 @@
   position: relative;
   display: flex;
   align-items: center;
-  @media (max-width: 650px) {
+  @media (max-width: 945px) {
     margin-top: 25px;
   }
 }
 
 .input {
   margin-right: 10px;
-  width: 220px;
-  height: 35px;
-  border: 2px solid #6B70F2;
+  width: 270px;
+  height: 45px;
+  border: 1px solid gray;
   border-radius: 5px;
-  padding: 10px;
-  font-size: 14px;
-  &:hover {
-    background: whitesmoke;
-  }
+  padding: 10px 10px 10px 35px;
+  font-size: 17px;
   &:focus {
     background: whitesmoke;
+    border: 1px solid #6B70F2;
   }
 }
 
 .logo {
   position: absolute;
-  right: 15px;
+  left: 8px;
   width: 20px;
+  opacity: 0.4;
+}
+
+.clear {
+  position: absolute;
+  right: 18px;
+  width: 14px;
+  opacity: 0.4;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
 }
