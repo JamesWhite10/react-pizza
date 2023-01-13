@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import searchLogo from '../../assets/search-icon.svg';
 import clearIcon from '../../assets/clear.svg';
 import classNames from './Search.module.scss';
+import {SearchContext} from "../../App";
 
-const Search = ({ searchValue, setSearchValue }) => {
+const Search = () => {
+
+    const { searchValue, setSearchValue } = useContext(SearchContext);
 
     return (
         <div className={classNames.root}>
